@@ -14,14 +14,6 @@ This project is a backend application built with **Node.js** and **Express.js**.
 - **Inventory Management**:
   - Update product stock.
 
-## Prerequisites
-
-Before running the project, ensure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (v14 or higher)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-- A database supported by Prisma (e.g., PostgreSQL, MySQL, SQLite, etc.)
-
 ## Installation
 
 1. Clone the repository:
@@ -34,7 +26,7 @@ Before running the project, ensure you have the following installed:
 2. Install dependencies:
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. Set up the database:
@@ -43,13 +35,18 @@ Before running the project, ensure you have the following installed:
    - Run the Prisma migrations to set up the database schema:
 
      ```bash
-     npx prisma migrate dev
+     npx prisma migrate generate
+     npx prisma db push
      ```
 
-4. Start the development server:
+4. create an .env file
+   refer custom.d.ts for all env variable used.
+   for DATABASE_URL=postgresql://POSTGRES_USER:POSTGRES_PASSWORD@localhost:5432/POSTGRES_DB
+
+5. Start the development server:
 
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 ## API Endpoints
